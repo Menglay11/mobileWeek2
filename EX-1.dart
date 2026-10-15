@@ -40,7 +40,7 @@ class Employee {
   List<Skill> get skills => _skills;
   Address get address => _address;
 
-  static const int _experienceBonusPerYear = 2000;
+  static int _experienceBonusPerYear = 2000;
   static int _flutterBonus = 5000;
   static int _dartBonus = 3000;
   static int _otherBonus = 1000;
@@ -71,8 +71,11 @@ class Employee {
 void main() {
   var emp1 = Employee('Sokea', 40000, [Skill.OTHER], Address('Street 123', 'Phnom Penh', '12000'), 2);
   emp1.printDetails();
+  print('Total Salary: \$${emp1.computeSalary()}');
 
   var emp2 = Employee.mobileDeveloper('Ronan', 45000, Address('Street 456', 'Phnom Penh', '12001'),
     3,);
   emp2.printDetails();
+  print('Total Salary: \$${emp2.computeSalary()}');
+
 }
